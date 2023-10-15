@@ -33,11 +33,11 @@ const Header = () => {
 
   // extracting the name of the current page or route from the URL path
   // Ex if the URL path is "/products/shoes," pageName would be "products."
-  const { pathName } = useLocation();
-  const pageName = pathName?.split('/')?.filter(Boolean)?.[0];
+  const { pathname } = useLocation();
+  const pageName = pathname?.split('/')?.filter(Boolean)?.[0];
 
   return (
-    <div className="flex flex-row h-14 px-4 md:px-5 justify-between items-center sticky top-0 z-10 bg-white dark:bg-black">
+    <div className="flex flex-row h-14 px-4 md:px-5 justify-between items-center sticky top-0 z-20 bg-white dark:bg-black">
       {loading && <Loader />}
 
       <div className="flex h-5 items-center">
@@ -95,13 +95,15 @@ const Header = () => {
           <div className="flex justify-center items-center ml-2 h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]">
             <FiBell className="text-white text-xl cursor-pointer" />
           </div>
+        </div>
 
-          <div className="flex h-8 w-8 mt-1 overflow-hidden rounded-full md:ml-4">
+        <div className="flex h-8 w-8 mt-1 overflow-hidden rounded-full md:ml-4">
+          <Link to={'https://github.com/SaketKothari'}>
             <img
               src="https://avatars.githubusercontent.com/u/81709725?v=4"
               alt="user-icon"
             />
-          </div>
+          </Link>
         </div>
       </div>
     </div>
