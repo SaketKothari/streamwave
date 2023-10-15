@@ -26,7 +26,7 @@ const Sidebar = () => {
   return (
     <div
       className={`w-[240px] md:block overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
-        mobileMenu ? 'translate-x-0' : ''
+        mobileMenu ? 'translate-x-0' : 'translate-x-[-240px]'
       }`}
     >
       <div className="flex px-5 flex-col">
