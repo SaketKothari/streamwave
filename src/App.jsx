@@ -8,6 +8,8 @@ import Feed from './pages/Feed';
 import SearchResult from './pages/SearchResult';
 import VideoDetails from './pages/VideoDetails';
 
+import Error from "./shared/Error"
+
 const AppLayout = () => {
   return (
     <div>
@@ -21,6 +23,7 @@ const appRouter = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: '/',
