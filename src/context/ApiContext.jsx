@@ -5,10 +5,12 @@ export const DataContext = createContext();
 
 export const AppContext = (props) => {
   const [loading, setLoading] = useState('loading');
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('New');
 
   useEffect(() => {
-    fetchSelectedCaregoryData();
-  }, []);
+    fetchSelectedCaregoryData(selectedCategory);
+  }, [selectedCategory]);
 
   const fetchSelectedCaregoryData = async (query) => {
     setLoading(true);
@@ -18,7 +20,16 @@ export const AppContext = (props) => {
   };
 
   return (
-    <DataContext.Provider value={{ loading, setLoading }}>
+    <DataContext.Provider
+      value={{
+        loading,
+        setLoading,
+        mobileMenu,
+        setMobileMenu,
+        selectedCategory,
+        setSelectedCategory,
+      }}
+    >
       {props.children}
     </DataContext.Provider>
   );

@@ -4,6 +4,8 @@ import { AppContext } from './context/ApiContext';
 
 import Header from './components/Header';
 
+import Feed from './pages/Feed';
+
 const AppLayout = () => {
   return (
     <div>
@@ -17,6 +19,12 @@ const appRouter = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
+    children: [
+      {
+        path: '/',
+        element: <Feed />,
+      },
+    ],
   },
 ]);
 
