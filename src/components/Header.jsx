@@ -6,17 +6,20 @@ import ytLogoMobile from '../assets/yt-logo-mobile.png';
 
 import { CgClose } from 'react-icons/cg';
 import { FiBell } from 'react-icons/fi';
+import { HiOutlineStatusOnline, HiOutlineStatusOffline } from 'react-icons/hi';
 import { IoIosSearch } from 'react-icons/io';
-import { RiVideoAddLine } from 'react-icons/ri';
 import { SlMenu } from 'react-icons/sl';
 
 import { DataContext } from '../context/ApiContext';
 import Loader from '../shared/Loader';
+import useOnline from '../utils/useOnline';
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const { loading, mobileMenu, setMobileMenu } = useContext(DataContext);
   const navigate = useNavigate();
+
+  const isOnline = useOnline();
 
   const searchQueryHandler = (event) => {
     if (
@@ -97,8 +100,16 @@ const Header = () => {
 
       <div className="flex items-center">
         <div className="hidden md:flex">
-          <div className="flex justify-center items-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]">
-            <RiVideoAddLine className="text-white text-xl cursor-pointer" />
+          <div
+            className={`flex justify-center items-center h-10 w-10 rounded-full ${
+              isOnline ? 'hover:bg-[#34a0a4]/[0.7]' : 'hover:bg-[#f2bad5]/[0.4]'
+            }`}
+          >
+            {isOnline ? (
+              <HiOutlineStatusOnline className="text-[#7cf6fd] text-xl" />
+            ) : (
+              <HiOutlineStatusOffline className="text-[#f74a8a] text-xl" />
+            )}
           </div>
 
           <div className="flex justify-center items-center ml-2 h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]">
