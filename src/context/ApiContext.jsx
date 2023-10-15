@@ -8,6 +8,7 @@ export const AppContext = (props) => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [searchResults, setSearchResults] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('New');
+  const [theme, setTheme] = useState(null);
 
   useEffect(() => {
     fetchSelectedCaregoryData(selectedCategory);
@@ -20,6 +21,21 @@ export const AppContext = (props) => {
     setLoading(false);
   };
 
+  useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme:dark)').matches) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  }, []);
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.getElementById('root').classList.add('dark');
+    } else {
+      document.getElementById('root').classList.remove('dark');
+    }
+  }, [theme]);
+
   return (
     <DataContext.Provider
       value={{
@@ -31,6 +47,8 @@ export const AppContext = (props) => {
         setSelectedCategory,
         searchResults,
         setSearchResults,
+        theme,
+        setTheme,
       }}
     >
       {props.children}
