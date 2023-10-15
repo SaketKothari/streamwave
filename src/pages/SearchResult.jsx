@@ -5,6 +5,7 @@ import { DataContext } from '../context/ApiContext';
 import { fetchDataFromApi } from '../utils/api';
 
 import Sidebar from '../components/Sidebar/Sidebar';
+import ShimmerVideoSearchResult from '../components/Shimmer/ShimmerVideoSearchResult';
 import VideoCardSearchResult from '../components/Videos/VideoCardSearchResult';
 
 const SearchResult = () => {
@@ -31,10 +32,18 @@ const SearchResult = () => {
 
       <div className="grow w-[calc(100%-240px)] h-full overflow-y-auto bg-black">
         <div className="grid grid-cols-1 gap-2 p-5">
-          {result?.map((item, index) => {
-            if (item?.type !== 'video') return false;
-            return <VideoCardSearchResult key={index} video={item?.video} />;
-          })}
+          {result === ''
+            ? Array(20)
+                .fill('')
+                .map((e, index) => {
+                  return <ShimmerVideoSearchResult key={index} />;
+                })
+            : result?.map((item, index) => {
+                if (item?.type !== 'video') return false;
+                return (
+                  <VideoCardSearchResult key={index} video={item?.video} />
+                );
+              })}
         </div>
       </div>
     </div>
