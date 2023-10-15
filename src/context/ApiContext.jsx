@@ -6,6 +6,7 @@ export const DataContext = createContext();
 export const AppContext = (props) => {
   const [loading, setLoading] = useState('loading');
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [searchResults, setSearchResults] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('New');
 
   useEffect(() => {
@@ -15,7 +16,7 @@ export const AppContext = (props) => {
   const fetchSelectedCaregoryData = async (query) => {
     setLoading(true);
     const data = await fetchDataFromApi(`search/?q=${query}`);
-    console.log(data.contents);
+    setSearchResults(data.contents);
     setLoading(false);
   };
 
@@ -28,6 +29,8 @@ export const AppContext = (props) => {
         setMobileMenu,
         selectedCategory,
         setSelectedCategory,
+        searchResults,
+        setSearchResults,
       }}
     >
       {props.children}
