@@ -1,5 +1,7 @@
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
+import { AppContext } from './context/ApiContext';
+
 import Header from './components/Header';
 
 const AppLayout = () => {
@@ -21,9 +23,11 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     <>
-      <div className="flex flex-col h-full">
-        <RouterProvider router={appRouter} />
-      </div>
+      <AppContext>
+        <div className="flex flex-col h-full">
+          <RouterProvider router={appRouter} />
+        </div>
+      </AppContext>
     </>
   );
 }
