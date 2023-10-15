@@ -2,13 +2,13 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import { AppContext } from './context/ApiContext';
 
-import Header from './components/Header';
+import Header from './components/Header/Header';
 
 import Feed from './pages/Feed';
 import SearchResult from './pages/SearchResult';
 import VideoDetails from './pages/VideoDetails';
 
-import Error from "./shared/Error"
+import Error from './shared/Error';
 
 const AppLayout = () => {
   return (
