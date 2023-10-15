@@ -27,6 +27,12 @@ const Header = () => {
     }
   };
 
+  const searchQueryHandler2 = () => {
+    if (searchQuery?.length > 0) {
+      navigate(`/searchResult/${searchQuery}`);
+    }
+  };
+
   const mobileMenuToggle = () => {
     setMobileMenu(!mobileMenu);
   };
@@ -81,7 +87,10 @@ const Header = () => {
           />
         </div>
 
-        <button className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#404040] rounded-r-3xl bg-white/[0.15]">
+        <button
+          onClick={searchQueryHandler2}
+          className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#404040] rounded-r-3xl bg-white/[0.15]"
+        >
           <IoIosSearch className="text-white text-xl" />
         </button>
       </div>
