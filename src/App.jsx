@@ -6,6 +6,8 @@ import store from './store/store';
 
 import Header from './components/Header/Header';
 import Live from './components/LiveChat/Live';
+import UseRefExample from './components/Examples/UseRefExample';
+import UseRefExample02 from './components/Examples/UseRefExample02';
 
 import Feed from './pages/Feed';
 import SearchResult from './pages/SearchResult';
@@ -39,6 +41,17 @@ const appRouter = createBrowserRouter([
       {
         path: '/searchResult/:searchQuery',
         element: <SearchResult />,
+      },
+      {
+        path: '/userefex',
+        element: (
+          <>
+            <div className='flex justify-center items-center'>
+              <UseRefExample />
+              <UseRefExample02 />
+            </div>
+          </>
+        ),
       },
       {
         path: '/video/:id',

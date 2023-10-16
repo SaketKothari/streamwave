@@ -10,7 +10,6 @@ import MobileMenuButton from './MobileMenuButton';
 import OnlineStatus from './OnlineStatus';
 import SearchInput from './SearchInput';
 import ThemeSwitch from './ThemeSwitch';
-import Live from '../LiveChat/Live';
 
 const Header = () => {
   const isOnline = useOnline();
