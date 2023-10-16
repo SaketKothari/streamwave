@@ -5,6 +5,7 @@ import { AppContext } from './context/ApiContext';
 import store from './store/store';
 
 import Header from './components/Header/Header';
+import Live from './components/LiveChat/Live';
 
 import Feed from './pages/Feed';
 import SearchResult from './pages/SearchResult';
@@ -30,6 +31,10 @@ const appRouter = createBrowserRouter([
       {
         path: '/',
         element: <Feed />,
+      },
+      {
+        path: '/live',
+        element: <Live />,
       },
       {
         path: '/searchResult/:searchQuery',

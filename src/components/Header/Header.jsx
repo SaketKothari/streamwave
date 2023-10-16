@@ -10,6 +10,7 @@ import MobileMenuButton from './MobileMenuButton';
 import OnlineStatus from './OnlineStatus';
 import SearchInput from './SearchInput';
 import ThemeSwitch from './ThemeSwitch';
+import Live from '../LiveChat/Live';
 
 const Header = () => {
   const isOnline = useOnline();
@@ -41,6 +42,9 @@ const Header = () => {
 
       <div className="flex items-center">
         <div className="hidden md:flex">
+          <Link to="/live">
+            <p className="text-black dark:text-white text-center mr-2 mt-2">Live</p>
+          </Link>
           <OnlineStatus isOnline={isOnline} />
           <ThemeSwitch theme={theme} setTheme={setTheme} />
         </div>
