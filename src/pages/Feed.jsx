@@ -24,7 +24,7 @@ const Feed = () => {
 
       {!isOnline && (
         <div className="grow w-[calc(100%-240px)] h-full overflow-y-auto bg-black">
-          <OfflineComponent />
+          <Offline />
         </div>
       )}
       {isOnline && (
