@@ -33,3 +33,5 @@ export const categories = [
   { name: 'Help', icon: <FiHelpCircle />, type: 'menu' },
   { name: 'Send feedback', icon: <RiFeedbackLine />, type: 'menu' },
 ];
+
+export const LIVE_CHAT_COUNT = 10;

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { LIVE_CHAT_COUNT } from '../utils/constants';
 
 const chatSlice = createSlice({
   name: 'chat',
@@ -7,7 +8,12 @@ const chatSlice = createSlice({
   },
   reducers: {
     addMessage: (state, action) => {
-      state.messages.unshift(action.payload);
+      if (state.messages.length >= LIVE_CHAT_COUNT) {
+        // If the number of messages exceeds or is equal to LIVE_CHAT_COUNT,
+        // remove the oldest message.
+        state.messages.shift();
+      }
+      state.messages.push(action.payload);
     },
   },
 });
