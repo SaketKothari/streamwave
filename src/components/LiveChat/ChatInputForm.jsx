@@ -17,7 +17,7 @@ const ChatInputForm = ({ dispatch }) => {
           );
           setLiveMessage('');
         }}
-        className="sticky top-full flex w-full items-center justify-start gap-1 border-t-[1px] border-white px-4 py-2 md:gap-4 md:border-[1px] md:shadow-[5px_5px_0px_0px_#4f4e4e]"
+        className="sticky top-full flex w-full items-center justify-start gap-1 border-t-[1px] border-black dark:border-white px-4 py-2 md:gap-4 md:border-[1px] md:shadow-[5px_5px_0px_0px_#4f4e4e]"
       >
         <img
           className="hidden aspect-square h-5 w-5 flex-shrink-0 rounded-full object-cover md:flex md:h-10 md:w-10"
@@ -28,7 +28,7 @@ const ChatInputForm = ({ dispatch }) => {
           placeholder="Message..."
           value={liveMessage}
           onChange={(e) => setLiveMessage(e.target.value)}
-          className="w-full bg-transparent p-2 text-sm text-white !outline-none placeholder:text-gray-500 md:p-4 md:text-base"
+          className="w-full bg-transparent p-2 text-sm text-black dark:text-white !outline-none placeholder:text-gray-500 md:p-4 md:text-base"
         />
         <button className="hidden h-5 w-5 flex-shrink-0 items-center justify-center p-1 md:flex md:h-10 md:w-10">
           <svg
@@ -38,7 +38,7 @@ const ChatInputForm = ({ dispatch }) => {
             stroke-width="1.5"
             stroke="currentColor"
             aria-hidden="true"
-            className="h-6 w-6 text-white"
+            className="h-6 w-6 text-black dark:text-white"
           >
             <path
               stroke-linecap="round"
@@ -55,7 +55,7 @@ const ChatInputForm = ({ dispatch }) => {
             stroke-width="1.5"
             stroke="currentColor"
             aria-hidden="true"
-            className="h-6 w-6 text-white"
+            className="h-6 w-6 text-black dark:text-white"
           >
             <path
               stroke-linecap="round"
@@ -70,7 +70,7 @@ const ChatInputForm = ({ dispatch }) => {
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
-            className="h-6 w-6 text-black"
+            className="h-6 w-6 text-white dark:text-black"
           >
             <path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.925A1.5 1.5 0 005.135 9.25h6.115a.75.75 0 010 1.5H5.135a1.5 1.5 0 00-1.442 1.086l-1.414 4.926a.75.75 0 00.826.95 28.896 28.896 0 0015.293-7.154.75.75 0 000-1.115A28.897 28.897 0 003.105 2.289z"></path>
           </svg>

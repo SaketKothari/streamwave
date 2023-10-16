@@ -45,9 +45,9 @@ const LiveChat = () => {
           <ChatSidebar />
 
           <div className="h-full w-full md:w-[70%]">
-            <div className="flex w-full items-center justify-between gap-2 border-b-[1px] border-white p-4">
+            <div className="flex w-full items-center justify-between gap-2 border-b-[1px] border-black dark:border-white p-4">
               <div className="flex w-full items-center justify-start gap-3">
-                <p className="font-semibold text-white">Live Chat</p>
+                <p className="font-semibold text-black dark:text-white">Live Chat</p>
               </div>
             </div>
             <div className="w-full h-[600px] ml-2 p-2 rounded-lg overflow-y-scroll flex flex-col-reverse">

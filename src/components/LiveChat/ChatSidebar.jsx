@@ -1,13 +1,13 @@
 const ChatSidebar = () => {
   return (
     <>
-      <div className="fixed right-full top-[77px] z-10 h-full w-full border-white bg-[#121212] transition-all duration-300 ease-in-out peer-focus:right-0 md:static md:block md:w-[30%] md:border-r-[1px]">
-        <div className="flex w-full items-center justify-start gap-2 border-b-[1px] border-white p-4">
+      <div className="fixed right-full top-[77px] z-10 h-full w-full border-black dark:border-white bg-white dark:bg-[#121212] transition-all duration-300 ease-in-out peer-focus:right-0 md:static md:block md:w-[30%] md:border-r-[1px]">
+        <div className="flex w-full items-center justify-start gap-2 border-b-[1px] border-black dark:border-white p-4">
           <input
             placeholder="Search chat..."
-            className="w-full bg-transparent px-2 text-white !outline-none placeholder:text-gray-500 md:px-4"
+            className="w-full bg-transparent px-2 text-black dark:text-white !outline-none placeholder:text-gray-500 md:px-4"
           />
-          <button className="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center border-[1px] border-white p-1 md:h-10 md:w-10">
+          <button className="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center border-[1px] border-black dark:border-white p-1 md:h-10 md:w-10">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -15,7 +15,7 @@ const ChatSidebar = () => {
               stroke-width="1.5"
               stroke="currentColor"
               aria-hidden="true"
-              className="h-5 w-5 text-white"
+              className="h-5 w-5 text-black dark:text-white"
             >
               <path
                 stroke-linecap="round"
@@ -24,7 +24,7 @@ const ChatSidebar = () => {
               ></path>
             </svg>
           </button>
-          <button className="hidden h-10 w-10 flex-shrink-0 items-center justify-center border-[1px] border-white p-1 md:inline-flex">
+          <button className="hidden h-10 w-10 flex-shrink-0 items-center justify-center border-[1px] border-black dark:border-white p-1 md:inline-flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -32,7 +32,7 @@ const ChatSidebar = () => {
               stroke-width="1.5"
               stroke="currentColor"
               aria-hidden="true"
-              className="h-5 w-5 text-white"
+              className="h-5 w-5 text-black dark:text-white"
             >
               <path
                 stroke-linecap="round"
@@ -43,8 +43,8 @@ const ChatSidebar = () => {
           </button>
         </div>
 
-        <ul className="flex h-[calc(100%-140px)] w-full flex-col items-start justify-start divide-y-[1px] divide-white overflow-y-auto md:h-[calc(100%-73px)]">
-          <li className="w-full cursor-pointer p-4 hover:bg-[#232323] md:p-6">
+        <ul className="flex h-[calc(100%-140px)] w-full flex-col items-start justify-start divide-y-[1px] divide-black dark:divide-white overflow-y-auto md:h-[calc(100%-73px)]">
+          <li className="w-full cursor-pointer p-4 hover:bg-white dark:hover:bg-[#232323] md:p-6">
             <div className="flex w-full items-start justify-start gap-3 md:gap-4">
               <img
                 className="flex aspect-square h-10 w-10 flex-shrink-0 rounded-full object-cover"
@@ -53,16 +53,16 @@ const ChatSidebar = () => {
               />
               <div className="flex w-full flex-col items-start justify-start gap-1 truncate text-ellipsis">
                 <div className="flex w-full items-center justify-between text-[10px] md:text-xs">
-                  <p className="text-gray-400">Kevin Malone</p>
-                  <p className="text-gray-400">2 hours ago</p>
+                  <p className="text-black dark:text-gray-400">Kevin Malone</p>
+                  <p className="text-black dark:text-gray-400">2 hours ago</p>
                 </div>
-                <p className="text-xs text-white md:text-sm">
+                <p className="text-xs text-black dark:text-white md:text-sm">
                   I can't keep doing this forever. It's been 20 seconds.
                 </p>
               </div>
             </div>
           </li>
-          <li className="w-full cursor-pointer p-4 hover:bg-[#232323] md:p-6">
+          <li className="w-full cursor-pointer p-4 hover:bg-white dark:hover:bg-[#232323] md:p-6">
             <div className="flex w-full items-start justify-start gap-3 md:gap-4">
               <img
                 className="flex aspect-square h-10 w-10 flex-shrink-0 rounded-full object-cover"
@@ -71,10 +71,10 @@ const ChatSidebar = () => {
               />
               <div className="flex w-full flex-col items-start justify-start gap-1 truncate text-ellipsis">
                 <div className="flex w-full items-center justify-between text-[10px] md:text-xs">
-                  <p className="text-gray-400">Michael Scott</p>
-                  <p className="text-gray-400">Yesterday</p>
+                  <p className="text-black dark:text-gray-400">Michael Scott</p>
+                  <p className="text-black dark:text-gray-400">Yesterday</p>
                 </div>
-                <p className="text-xs text-white md:text-sm">
+                <p className="text-xs text-black dark:text-white md:text-sm">
                   That's what she said!
                 </p>
               </div>
