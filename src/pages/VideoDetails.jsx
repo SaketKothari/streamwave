@@ -10,6 +10,8 @@ import ReactPlayer from 'react-player';
 
 import { DataContext } from '../context/ApiContext';
 import { fetchDataFromApi } from '../utils/api';
+
+import CommentContainer from '../components/Comments/CommentContainer';
 import ShimmerVideoCardSuggestion from '../components/Shimmer/ShimmerVideoCardSuggestion';
 import VideoCardSuggestion from '../components/Videos/VideoCardSuggestion';
 
@@ -61,6 +63,8 @@ const VideoDetails = () => {
           <div className="text-black dark:text-white font-bold text-sm md:text-xl mt-4 line-clamp-2">
             {video?.title}
           </div>
+
+          <CommentContainer />
 
           <div className="flex justify-between flex-col md:flex-row mt-4">
             <div className="flex">
