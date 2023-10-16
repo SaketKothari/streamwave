@@ -1,6 +1,8 @@
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import { AppContext } from './context/ApiContext';
+import store from './store/store';
 
 import Header from './components/Header/Header';
 
@@ -44,11 +46,13 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     <>
-      <AppContext>
-        <div className="flex flex-col h-full">
-          <RouterProvider router={appRouter} />
-        </div>
-      </AppContext>
+      <Provider store={store}>
+        <AppContext>
+          <div className="flex flex-col h-full">
+            <RouterProvider router={appRouter} />
+          </div>
+        </AppContext>
+      </Provider>
     </>
   );
 }

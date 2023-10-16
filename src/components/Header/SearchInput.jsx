@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react';
 import { IoIosSearch, IoMdSearch } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { cacheResults } from '../../slices/searchSlice';
 import { fetchDataFromApi } from '../../utils/api';
 
 const SearchInput = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const dispatch = useDispatch();
+  const searchCache = useSelector((store) => store.search);
 
   const navigate = useNavigate();
 
@@ -35,7 +40,13 @@ const SearchInput = () => {
     // Make an API call after every keypress
     // But if diff bw 2 API calls is < 200ms => Decline API calls
     const timer = setTimeout(() => {
-      getSearchSuggestions();
+      // if searchQuery is present in my cache, then directly setSuggestion i.e return searchCache of searchQuery
+      if (searchCache[searchQuery]) {
+        setSuggestions(searchCache[searchQuery]);
+      } else {
+        // if not then make an API Call
+        getSearchSuggestions();
+      }
     }, 200);
 
     return () => {
@@ -47,6 +58,8 @@ const SearchInput = () => {
     try {
       const data = await fetchDataFromApi(`auto-complete/?q=${searchQuery}`);
       setSuggestions(data?.results);
+      // updating the cache
+      dispatch(cacheResults({ [searchQuery]: data?.results }));
     } catch (error) {
       console.error('Error fetching search suggestions:', error);
     }
