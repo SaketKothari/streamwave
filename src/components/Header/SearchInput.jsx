@@ -78,13 +78,13 @@ const SearchInput = () => {
           onBlur={() => setShowSuggestions(false)}
           className="w-44 px-5 bg-transparent outline-none text-black dark:text-white md:pl-0 md:group-focus-within:pl-0 md:w-64 lg:w-[500px]"
         />
-        <button
-          onClick={searchQueryHandler2}
-          className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#404040] rounded-r-3xl bg-black/[0.1] dark:bg-white/[0.15]"
-        >
-          <IoIosSearch className="text-black/[0.9] dark:text-white text-xl" />
-        </button>
       </div>
+      <button
+        onClick={searchQueryHandler2}
+        className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#404040] rounded-r-3xl bg-black/[0.1] dark:bg-white/[0.15]"
+      >
+        <IoIosSearch className="text-black/[0.9] dark:text-white text-xl" />
+      </button>
 
       {showSuggestions && suggestions?.length > 0 && (
         <div className="fixed bg-white w-[18rem] md:w-[33rem] max-h-[350px] shadow-lg border rounded-2xl overflow-y-auto mt-[26rem] md:mt-[26rem]   ml-[-2rem] md:ml-[2rem] z-50 text-left">
